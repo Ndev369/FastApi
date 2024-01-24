@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from routers import users, products
+from routers import products,users
 
 
 app = FastAPI()

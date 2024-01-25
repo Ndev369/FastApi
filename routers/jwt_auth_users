@@ -1,0 +1,36 @@
+from fastapi import FastAPI, HTTPException, Depends, status
+from pydantic import BaseModel
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+
+app = FastAPI()
+app.title = "Authentication API JWT"
+app.version = "0.0.1"
+oauth2 = OAuth2PasswordBearer(tokenUrl="/login")
+
+
+class User(BaseModel):
+    username: str
+    full_name: str
+    email: str
+    disabled: bool
+    
+    
+class UserDB(User):
+    password: str
+
+users_db = {
+    "johndoe": {
+        "username": "johndoe",
+        "full_name": "John Doe",
+        "email": "john@gmail.com",
+        "disabled": False,
+        "password": "123456"
+},
+    "alice": {
+        "username": "alice",
+        "full_name": "Alice Wonderson",
+        "email": "alice@gmail.com",
+        "disabled": True,
+        "password": "12345"
+        }
+}

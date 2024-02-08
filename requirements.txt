@@ -22,7 +22,7 @@ decorator==5.1.1
 defusedxml==0.7.1
 ecdsa==0.18.0
 executing==2.0.0
-fastapi==0.109.0
+fastapi==0.109.1
 fastjsonschema==2.18.1
 fqdn==1.5.1
 h11==0.14.0
